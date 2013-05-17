@@ -47,8 +47,8 @@
     [tasksPipe read:^(id responseObject) {
         
      _tasks = responseObject;
-     //[self.view setNeedsDisplay];
-     [self.tableView reloadData];
+
+        [self.tableView reloadData];
         
      }
             failure:^(NSError *error) {

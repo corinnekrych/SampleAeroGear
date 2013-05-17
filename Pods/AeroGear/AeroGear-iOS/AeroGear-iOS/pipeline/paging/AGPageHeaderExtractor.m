@@ -15,27 +15,18 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "AGAuthenticationModule.h"
+#import "AGPageHeaderExtractor.h"
 
-/**
- * AGAuthenticationModuleAdapter represents the _internal_ authentication module 'interface'
- */
-@protocol AGAuthenticationModuleAdapter <AGAuthenticationModule>
+@implementation AGPageHeaderExtractor
 
-/**
- *  A key/value pair of the authentication tokens.
- */
-@property (nonatomic, readonly) NSMutableDictionary* authTokens;
-
-/**
- * Performs a simple check if the user of the module impl. is authenticated.
- */
-- (BOOL)isAuthenticated;
-
-/**
- * Performs deauthorization, after logout.
- */
-- (void)deauthorize;
+- (NSDictionary*) parse:(id)response
+                headers:(NSDictionary*)headers
+                   next:(NSString*)nextIdentifier
+                   prev:(NSString*)prevIdentifier {
+    
+    // simular to body extractor, but this time the headers are parsed
+    // for the 'previous' and 'next' page parameters.
+    return [super parse:headers headers:headers next:nextIdentifier prev:prevIdentifier];
+}
 
 @end

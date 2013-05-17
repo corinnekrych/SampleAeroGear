@@ -15,27 +15,11 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "AGAuthenticationModule.h"
+#import "AGPageConfig.h"
 
 /**
- * AGAuthenticationModuleAdapter represents the _internal_ authentication module 'interface'
+ * The internal implementation of the AGPageConfig to configure Paging params.
  */
-@protocol AGAuthenticationModuleAdapter <AGAuthenticationModule>
-
-/**
- *  A key/value pair of the authentication tokens.
- */
-@property (nonatomic, readonly) NSMutableDictionary* authTokens;
-
-/**
- * Performs a simple check if the user of the module impl. is authenticated.
- */
-- (BOOL)isAuthenticated;
-
-/**
- * Performs deauthorization, after logout.
- */
-- (void)deauthorize;
+@interface AGPageConfiguration : NSObject <AGPageConfig>
 
 @end

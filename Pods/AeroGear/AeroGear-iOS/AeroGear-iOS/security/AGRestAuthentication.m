@@ -25,8 +25,6 @@
 @implementation AGRestAuthentication {
     // ivars
     AGHttpClient* _restClient;
-    NSString* _tokenHeaderName;
-    
 }
 
 // =====================================================
@@ -54,7 +52,7 @@
 // ==============================================================
 // ======== internal API (AGAuthenticationModuleAdapter) ========
 // ==============================================================
-@synthesize authToken = _authToken;
+@synthesize authTokens = _authTokens;
 
 
 
@@ -76,7 +74,6 @@
         _logoutEndpoint = config.logoutEndpoint;
         _enrollEndpoint = config.enrollEndpoint;
         _baseURL = config.baseURL.absoluteString;
-        _tokenHeaderName = config.tokenHeaderName;
         
         _restClient = [AGHttpClient clientFor:config.baseURL timeout:config.timeout];
         _restClient.parameterEncoding = AFJSONParameterEncoding;
@@ -87,7 +84,6 @@
 
 -(void)dealloc {
     _restClient = nil;
-    _tokenHeaderName = nil;
 }
 
 
@@ -148,9 +144,11 @@
 
 -(void) logout:(void (^)())success
      failure:(void (^)(NSError *error))failure {
-    
+
     // stash the token to the header:
-    [_restClient setDefaultHeader:_tokenHeaderName value:_authToken];
+    [_authTokens enumerateKeysAndObjectsUsingBlock:^(id header, id value, BOOL *stop) {
+        [_restClient setDefaultHeader:header value:value];
+    }];
     
     // logoff:
     [_restClient postPath:_logoutEndpoint parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -177,8 +175,7 @@
 
 // private method
 -(void) readAndStashToken:(AFHTTPRequestOperation*) operation {
-    // TODO: hard-coded header name:
-    _authToken = [[[operation response] allHeaderFields] valueForKey:_tokenHeaderName];
+    _authTokens = [[NSMutableDictionary alloc] init];
 }
 
 // ==============================================================
@@ -186,10 +183,12 @@
 // ==============================================================
 - (BOOL)isAuthenticated {
     //return !!_authToken;
-    return (nil != _authToken);
+    return (nil != _authTokens);
 }
+
 - (void)deauthorize {
-    _authToken = nil;
+    // TODO ?
+    _authTokens = nil;
 }
 
 // general override...

@@ -25,17 +25,22 @@ Below is an example that goes against the AeroGear Controller Server:
 
     NSURL* baseURL = [NSURL URLWithString:@"https://controller-aerogear.rhcloud.com/aerogear-controller-demo"];
     AGPipeline* agPipeline = [AGPipeline pipelineWithBaseURL:baseURL];
-    
+ 
     id<AGPipe> cars = [agPipeline pipe:^(id<AGPipeConfig> config) {
         [config setName:@"cars-custom"];
-        [config setNextIdentifier:@"AG-Links-Next"];
-        [config setPreviousIdentifier:@"AG-Links-Previous"];
-        [config setMetadataLocation:@"header"];
+        
+        [config setPageConfig:^(id<AGPageConfig> pageConfig) {
+            [pageConfig setNextIdentifier:@"AG-Links-Next"];
+            [pageConfig setPreviousIdentifier:@"AG-Links-Previous"];
+            [pageConfig setMetadataLocation:@"header"];
+        }];
     }];
 
-First we create our [Pipeline](AGPipeline) object. Notice that in the Pipe configuration object, we explicitely declare the name of the paging identifiers supported by the server, as well as the the location of these identifiers in the response. Note that If not specified, the library will assume the server is using Web Linking paging strategy.
+Paging configuration parameters are encapsulated in the AGPageConfig object. Similar to the way we set Pipe configuration params by means of a block, paging configuration params are set using [AGPipeConfig setPageConfig:] method passing a block with the desired paging paramaters. Notice that in our example, we explicitely declare the name of the paging identifiers supported by the server, as well as the location of these identifiers in the response. If the metadataLocation is not specified, the library will assume the server is using Web Linking pagination strategy and will default to it. 
+ 
+For cases that a custom pagination strategy is followed in the server application , the library also allows the user to plug in a user-defined one, by the means of the [pageConfig setPageParameterExtractor] configuration setting. If set, the library will follow this strategy, overriding the build-in provided ones. In that case, the metadata location is not required and is ignored if set. The strategy should follow the protocol AGPageParameterExtractor, allowing the library to determine the 'next' and 'previous' parameters.
 
-## Start Paging
+ ## Start Paging
 
 To kick-start pagination, you use the method ```readWithParams``` of the underlying [Pipe](AGPipe), passing your desired query parameters to the server. Upon successfully completion, the _pagedResultSet_ (an enchached category of NSArray) will allow you to scroll through the result set.
 
@@ -74,9 +79,16 @@ To move backwards in the result set, you simple call ```previous``` on the _page
         // handle error
     }];
 
-## Exception cases
-
-Moving beyond last or first page is left on the behaviour of the specific server implementation, that is the library will not treat it differently. Some servers can throw an error (like Twitter or AeroGear Controller does) by respondng with an http error response, or simply return an empty list. The user is responsible to cater for exception cases like this.
+ ## Notes
+ 
+ The library uses the 'next' and 'previous' identifiers:
+ 
+ - to extract the paging information params from the response and
+ - filling those paging information params in the subsequent ```next``` and ```previous``` requests.
+ 
+ Failing to provide correct identifiers, means that no paging params would be appended in the request. Caution: Without valid paging parameters the used service API may simply return the entire data. To ensure the results returned  do 'logical' represent a 'next' and 'previous' page, the user must ensure correct identifiers are set in the Page configuration.
+ 
+ Further, moving beyond last or first page is left on the behaviour of the specific server implementation, that is the library will not treat it differently. Some servers can throw an error (like Twitter or AeroGear Controller does) by respondng with an http error response, or simply return an empty list. The user is responsible to cater for exception cases like this.
 */
 @interface NSMutableArray (AGPaging)
 

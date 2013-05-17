@@ -119,7 +119,7 @@ static char const * const TimerTagKey = "TimerTagKey";
     [self processRequest:request success:success failure:failure];
 }
 
-// override to not handle the cookies and to add a request timeout interval
+// override to add a request timeout interval
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                       path:(NSString *)path
                                 parameters:(NSDictionary *)parameters
@@ -129,10 +129,7 @@ static char const * const TimerTagKey = "TimerTagKey";
     
     // set the timeout interval
     [req setTimeoutInterval:_interval];
-    
-    // disable the default cookie handling in the override:
-    [req setHTTPShouldHandleCookies:NO];
-    
+
     return req;
 }
 

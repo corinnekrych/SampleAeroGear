@@ -20,6 +20,10 @@
 
 #import "AGHttpClient.h"
 
+#import "AGPageHeaderExtractor.h"
+#import "AGPageBodyExtractor.h"
+#import "AGPageWebLinkingExtractor.h"
+
 //category:
 #import "AGNSMutableArray+Paging.h"
 
@@ -27,9 +31,9 @@
     // TODO make properties on a PRIVATE category...
     id<AGAuthenticationModuleAdapter> _authModule;
     NSString* _recordId;
+
     AGPipeConfiguration* _config;
-    // the state of the paging object reference.
-    NSMutableArray* _pagingObject;
+    AGPageConfiguration* _pageConfig;
 }
 
 // =====================================================
@@ -67,8 +71,23 @@
         _restClient = [AGHttpClient clientFor:finalURL timeout:_config.timeout];
         _restClient.parameterEncoding = AFJSONParameterEncoding;
 
-        _pagingObject = [NSMutableArray array];
+        _pageConfig = [[AGPageConfiguration alloc] init];
+        
+        // set up paging config from the user supplied block
+        if (pipeConfig.pageConfig)
+            pipeConfig.pageConfig(_pageConfig);
+        
+        if (!_pageConfig.pageExtractor) {
+            if ([_pageConfig.metadataLocation isEqualToString:@"webLinking"]) {
+                [_pageConfig setPageExtractor:[[AGPageWebLinkingExtractor alloc] init]];
+            } else if ([_pageConfig.metadataLocation isEqualToString:@"header"]) {
+                [_pageConfig setPageExtractor:[[AGPageHeaderExtractor alloc] init]];
+            }else if ([_pageConfig.metadataLocation isEqualToString:@"body"]) {
+                [_pageConfig setPageExtractor:[[AGPageBodyExtractor alloc] init]];
+            }
+        }
     }
+    
     return self;
 }
 
@@ -118,24 +137,8 @@
 // read all, via HTTP GET
 -(void) read:(void (^)(id responseObject))success
      failure:(void (^)(NSError *error))failure {
-    
-    // try to add auth.token:
-    [self applyAuthToken];
-    
-    // TODO: better Endpoints....
-    [_restClient getPath:_URL.path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if (success) {
-            //TODO: NSLog(@"Invoking successblock....");
-            success(responseObject);
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        if (failure) {
-            //TODO: NSLog(@"Invoking failure block....");
-            failure(error);
-        }
-    } ];
+
+    [self readWithParams:nil success:success failure:failure];
 }
 
 // read, with (filter/query) params. Used for paging, can be used
@@ -151,34 +154,27 @@
     // which can be the default limit/offset OR what has
     // been configured on the PIPE level.....:
     if (!parameterProvider)
-        parameterProvider = _config.parameterProvider;
+        parameterProvider = _pageConfig.parameterProvider;
 
     [_restClient getPath:_URL.path parameters:parameterProvider success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
-        NSDictionary *linkInformationContainer;
-        if ([_config.metadataLocation isEqualToString:@"webLinking"]) {
-            linkInformationContainer = [self parseWebLinkInformation:[[[operation response] allHeaderFields] valueForKey:@"Link"]];
-        } else if ([_config.metadataLocation isEqualToString:@"body"]) {
-            // if the response is an array, the parser returns nil
-            linkInformationContainer = [self parseQueryInformation:responseObject];
-        } else if ([_config.metadataLocation isEqualToString:@"header"]) {
-            linkInformationContainer = [self parseQueryInformation:[[operation response] allHeaderFields]];
-        }
+        NSMutableArray* pagingObject;
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            [_pagingObject setArray:[NSArray arrayWithObject:responseObject]];
+            pagingObject = [NSMutableArray arrayWithObject:responseObject];
         } else {
-            [_pagingObject setArray:(NSMutableArray*) responseObject];
+            pagingObject = (NSMutableArray*) [responseObject mutableCopy];
         }
-        
+
         // stash pipe reference:
-        _pagingObject.pipe = self;
-        // stash the SCROLLING params:
-        _pagingObject.parameterProvider = linkInformationContainer;
-        
+        pagingObject.pipe = self;
+        pagingObject.parameterProvider = [_pageConfig.pageExtractor parse:responseObject
+                                                               headers:[[operation response] allHeaderFields]
+                                                                  next:_pageConfig.nextIdentifier
+                                                                  prev:_pageConfig.previousIdentifier];
         if (success) {
             //TODO: NSLog(@"Invoking successblock....");
-            success(_pagingObject);
+            success(pagingObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -299,8 +295,10 @@
 
 // helper method:
 -(void) applyAuthToken {
-    if ([_authModule isAuthenticated]) {
-        [_restClient setDefaultHeader:@"Auth-Token" value:[_authModule authToken]];
+    if (_authModule && [_authModule isAuthenticated]) {
+        [[_authModule authTokens] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            [_restClient setDefaultHeader:key value:obj];
+        }];
     }
 }
 
@@ -321,74 +319,6 @@
                                                NSLocalizedDescriptionKey, nil]];
     
     failure(error);
-}
-
--(NSDictionary *) parseQueryInformation:(NSDictionary *)info {
-    // NSArray is ONLY being passed in, when the metadataLocation is "body"
-    // AND it is actually NOT at the root level, like twitter does
-    if (!info || ![info isKindOfClass:[NSDictionary class]] || (info.count ==0)) {
-        // for now... return NIL, since we do not support that...
-        return nil;
-    }
-
-    NSString *nextIdentifier = _config.nextIdentifier;
-    NSString *prevIdentifier = _config.previousIdentifier;
-
-    // buld the MAP of links....:
-    NSMutableDictionary *mapOfLink = [NSMutableDictionary dictionary];
-
-    if ([info valueForKey:nextIdentifier] != nil)
-        [mapOfLink setValue:[self transformQueryString:[info valueForKey:nextIdentifier]] forKey:@"AG-next-key"]; /// internal key...
-    if ([info valueForKey:prevIdentifier] !=nil )
-        [mapOfLink setValue:[self transformQueryString:[info valueForKey:prevIdentifier]] forKey:@"AG-prev-key"]; /// internal key...
-
-    return mapOfLink;
-}
-
--(NSDictionary *) parseWebLinkInformation:(NSString *)headerValue {
-    NSMutableDictionary *pagingLinks = [NSMutableDictionary dictionary];
-    NSArray *links = [headerValue componentsSeparatedByString:@","];
-    for (NSString *link in links) {
-        NSArray *elementsPerLink = [link componentsSeparatedByString:@";"];
-        
-        NSDictionary *queryArguments;
-        for (NSString *elem in elementsPerLink) {
-            NSString *tmpElem = [elem stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            if ([tmpElem hasPrefix:@"<"] && [tmpElem hasSuffix:@">"]) {
-                NSURL *parsedURL = [NSURL URLWithString:[[tmpElem substringFromIndex:1] substringToIndex:tmpElem.length-2]]; //2 because, the first did already cut one char...
-                queryArguments = [self transformQueryString:parsedURL.query];
-            } else if ([tmpElem hasPrefix:@"rel="]) {
-                // only those 'rel' links that we need (prev/next)
-                NSString *rel = [[tmpElem substringFromIndex:5] substringToIndex:tmpElem.length-6]; // cutting 5 + the last....
-                
-                if ([_config.nextIdentifier isEqualToString:rel]) {
-                    [pagingLinks setValue:queryArguments forKey:@"AG-next-key"]; // internal key
-                } else if ([_config.previousIdentifier isEqualToString:rel]) {
-                    [pagingLinks setValue:queryArguments forKey:@"AG-prev-key"]; // internal key
-                }
-            } else {
-                // ignore title etc
-            }
-        }
-    }
-    return pagingLinks;
-}
-
--(NSDictionary *) transformQueryString:(NSString *) value {
-    // we need to get rid of the '?' and everything before that
-    // linke any URL info... (resource?params...)
-    NSRange range = [value rangeOfString:@"?"];
-    
-    if (range.location != NSNotFound) {
-        value = [value substringFromIndex:NSMaxRange(range)];
-    }
-    // chop the query string into a dictionary
-    NSArray *components = [value componentsSeparatedByString:@"&"];
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    for (NSString *component in components) {
-        [parameters setObject:[[component componentsSeparatedByString:@"="] objectAtIndex:1] forKey:[[component componentsSeparatedByString:@"="] objectAtIndex:0]];
-    }
-    return parameters;
 }
 
 + (BOOL) accepts:(NSString *) type {

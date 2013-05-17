@@ -20,6 +20,7 @@
 #import "AGPipe.h"
 #import "AGBaseAdapter.h"
 #import "AGPipeConfiguration.h"
+#import "AGPageConfiguration.h"
 
 /**
  An internal AGPipe implementation that uses REST as the communication transport.

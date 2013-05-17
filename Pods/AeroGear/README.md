@@ -1,7 +1,6 @@
-aerogear-ios
-============
+# aerogear-ios [![Build Status](https://travis-ci.org/aerogear/aerogear-ios.png)](https://travis-ci.org/aerogear/aerogear-ios)
 
-iOS/Objective-C client library implementation for AeroGear
+iOS/Objective-C client library implementation for AeroGear!
 
 The AeroGear iOS client lib is based on the [AFNetworking](https://github.com/AFNetworking/AFNetworking/) library.
 
@@ -9,7 +8,11 @@ The project requires [CocoaPods](http://cocoapods.org/) for dependency managemen
 
 ## API docs
 
-The API is documented [here](http://aerogear.org/docs/specs/aerogear-ios/). Some basic usages are documented [here](API.md).
+The API is documented [here](http://aerogear.org/docs/specs/aerogear-ios/). 
+
+## iOS Cookbook
+
+Some basic usages are documented [here](http://aerogear.org/docs/guides/iOSCookbook/).
 
 ## Getting started
 

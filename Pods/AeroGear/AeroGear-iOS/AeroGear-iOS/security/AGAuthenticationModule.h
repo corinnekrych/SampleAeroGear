@@ -41,7 +41,7 @@ The ```enroll``` function of the _AGAuthenticationModule_ protocol is used to re
         NSLog(@"SAVE: An error occured! \n%@", error);
     }];
 
-The ```enroll``` function submits a generic map object with contains all the information about the new user, that the server endpoint requires. The default (REST) auth module issues for the above a request against _https://todoauth-aerogear.rhcloud.com/todo-server/auth/enroll_. Besides the NSDictionary, the function accepts two simple blocks that are invoked on success or in case of an failure.
+The ```enroll``` function submits a generic map object with contains all the information about the new user, that the server endpoint requires. The default (REST) auth module issues for the above a request against _https://todo-aerogear.rhcloud.com/todo-server/auth/enroll_. Besides the NSDictionary, the function accepts two simple blocks that are invoked on success or in case of an failure.
 
 ## Login 
 
@@ -56,7 +56,7 @@ Once you have a _valid_ user you can use that information to issue a login again
         NSLog(@"SAVE: An error occured! \n%@", error);
     }];
 
-The default (REST) auth module issues for the above a request against _https://todoauth-aerogear.rhcloud.com/todo-server/auth/login_. Besides the _username_ and the _password_, the function accepts two simple blocks that are invoked on success or in case of an failure.
+The default (REST) auth module issues for the above a request against _https://todo-aerogear.rhcloud.com/todo-server/auth/login_. Besides the _username_ and the _password_, the function accepts two simple blocks that are invoked on success or in case of an failure.
 
 ## Pass the auth module to a pipe
 
@@ -91,7 +91,7 @@ The logout from the server can be archived by using the ```logout``` function:
         NSLog(@"SAVE: An error occured! \n%@", error);
     }];
 
-The default (REST) auth module issues for the above a request against _https://todoauth-aerogear.rhcloud.com/todo-server/auth/logout_. The function accepts two simple blocks that are invoked on success or in case of an failure.
+The default (REST) auth module issues for the above a request against _https://todo-aerogear.rhcloud.com/todo-server/auth/logout_. The function accepts two simple blocks that are invoked on success or in case of an failure.
 
 ## Time out and Cancel pending operations
 

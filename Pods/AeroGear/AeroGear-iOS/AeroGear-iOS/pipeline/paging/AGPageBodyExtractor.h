@@ -16,26 +16,13 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "AGAuthenticationModule.h"
+
+#import "AGPageBaseExtractor.h"
 
 /**
- * AGAuthenticationModuleAdapter represents the _internal_ authentication module 'interface'
+ *  An internal AGPageParameterExtractor implementation that uses
+ *  the response body to parse paging information.
  */
-@protocol AGAuthenticationModuleAdapter <AGAuthenticationModule>
-
-/**
- *  A key/value pair of the authentication tokens.
- */
-@property (nonatomic, readonly) NSMutableDictionary* authTokens;
-
-/**
- * Performs a simple check if the user of the module impl. is authenticated.
- */
-- (BOOL)isAuthenticated;
-
-/**
- * Performs deauthorization, after logout.
- */
-- (void)deauthorize;
+@interface AGPageBodyExtractor : AGPageBaseExtractor
 
 @end

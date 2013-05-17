@@ -16,26 +16,22 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "AGAuthenticationModule.h"
+
+#import "AGPageParameterExtractor.h"
 
 /**
- * AGAuthenticationModuleAdapter represents the _internal_ authentication module 'interface'
+ * Abstract base class that concrete page extractor implementations can derive for.
+ * Used to provide useful methods, that implementions can use.
  */
-@protocol AGAuthenticationModuleAdapter <AGAuthenticationModule>
+@interface AGPageBaseExtractor : NSObject<AGPageParameterExtractor>
 
 /**
- *  A key/value pair of the authentication tokens.
+ * Parses a query string of the form "?param1=val1&param2=val&.." and
+ * returns a dictionary with the params encapsulated as a key/value pairs.
+ * Note: If a prefix of 'http://.." location is present, it is choped prior parsing.
+ *
+ * @returns an NSDictionary with the parsed key-value params.
  */
-@property (nonatomic, readonly) NSMutableDictionary* authTokens;
-
-/**
- * Performs a simple check if the user of the module impl. is authenticated.
- */
-- (BOOL)isAuthenticated;
-
-/**
- * Performs deauthorization, after logout.
- */
-- (void)deauthorize;
+- (NSDictionary *) transformQueryString:(NSString *)value;
 
 @end

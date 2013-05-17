@@ -6,12 +6,16 @@ PODS:
   - Reachability (3.0.0)
 
 DEPENDENCIES:
-  - AeroGear (= 1.0.0)
+  - AeroGear (from `https://github.com/aerogear/aerogear-ios.git`)
   - JSONKit (~> 1.4)
   - Reachability (~> 3.0.0)
 
+EXTERNAL SOURCES:
+  AeroGear:
+    :git: https://github.com/aerogear/aerogear-ios.git
+
 SPEC CHECKSUMS:
-  AeroGear: 77dda17b53332f9f6efef22e0b4954d11adc60cc
+  AeroGear: d57e8e28a174254837af803981faaaf8fbdda750
   AFNetworking: b21c1252d437fd322e7db1caa93b163d76a362cb
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   Reachability: 500bd76bf6cd8ff2c6fb715fc5f44ef6e4c024f2

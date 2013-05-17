@@ -20,17 +20,23 @@
 
 static char const * const AGPipeKey = "AGPipeKey";
 static char const * const AGParamProviderKey = "AGParamProviderKey";
+
 @implementation NSMutableArray (AGPaging)
 
-
-#pragma mark paging category 
+#pragma mark paging category
 -(void) next:(void (^)(id responseObject))success
      failure:(void (^)(NSError *error))failure {
     
-    
     [self.pipe readWithParams:[self.parameterProvider valueForKey:@"AG-next-key"] success:^(id responseObject) {
+        NSMutableArray* pagingObject = (NSMutableArray*) responseObject;
+
+        // update link information
+        self.parameterProvider = pagingObject.parameterProvider;
+        // update data
+        [self setArray:pagingObject];
+
         if (success) {
-            success(responseObject);
+            success(self);
         }
     } failure:^(NSError *error) {
         if (failure) {
@@ -43,8 +49,15 @@ static char const * const AGParamProviderKey = "AGParamProviderKey";
      failure:(void (^)(NSError *error))failure {
     
     [self.pipe readWithParams:[self.parameterProvider valueForKey:@"AG-prev-key"] success:^(id responseObject) {
+        NSMutableArray* pagingObject = (NSMutableArray*) responseObject;
+        
+        // update link information
+        self.parameterProvider = pagingObject.parameterProvider;
+        // update data
+        [self setArray:pagingObject];
+        
         if (success) {
-            success(responseObject);
+            success(self);
         }
     } failure:^(NSError *error) {
         if (failure) {
@@ -56,7 +69,6 @@ static char const * const AGParamProviderKey = "AGParamProviderKey";
 #pragma mark accessor AssociatedObjects
 -(void) setPipe:(id<AGPipe>)pipe {
     objc_setAssociatedObject(self, AGPipeKey, pipe, OBJC_ASSOCIATION_ASSIGN);
-    
 }
 
 -(id<AGPipe>) pipe {
@@ -64,10 +76,10 @@ static char const * const AGParamProviderKey = "AGParamProviderKey";
 }
 -(void) setParameterProvider:(NSDictionary *)parameterProvider {
     objc_setAssociatedObject(self, AGParamProviderKey, parameterProvider, OBJC_ASSOCIATION_ASSIGN);
-    
 }
 
 -(NSDictionary *) parameterProvider {
     return objc_getAssociatedObject(self, AGParamProviderKey);
 }
+
 @end

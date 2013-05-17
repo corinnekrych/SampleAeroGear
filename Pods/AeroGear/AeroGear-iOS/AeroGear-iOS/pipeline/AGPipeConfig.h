@@ -16,7 +16,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "AGConfig.h"
+#import "AGPageConfig.h"
 #import "AGAuthenticationModule.h"
 
 /**
@@ -41,48 +41,7 @@
 @property (copy, nonatomic) NSString* recordId;
 
 /**
- * A dictionary containing all the HTTP request parameters and their values,
- * that are passed to the server, used used when issuing paging requests.
- *
- * If no "parameter provider" has been provided, the values for
- * limit/offset are used
- */
-@property (copy, nonatomic) NSDictionary* parameterProvider;
-
-/**
- * The offset of the first element that should be included in the
- * returned collection (default: 0)
- * 
- * If a paramater provider has been given, the offset value is ignored.
- */
-@property (copy, nonatomic) NSString* offset;
-
-/**
- * The maximum number of results the server should return (default: 10)
- *
- * If a paramater provider has been given, the limit value is ignored.
- */
-@property (assign, nonatomic) NSNumber* limit;
-
-/**
- * Indicates whether paging information (see identifiers) is received
- * from the response 'header', the response 'body' or via RFC 5988 ('webLinking'),
- * which is the default. Other values are ignored and the default is being used.
- */
-@property (copy, nonatomic) NSString* metadataLocation;
-
-/**
- * The next identifier name (default: 'next').
- */
-@property (copy, nonatomic) NSString* nextIdentifier;
-
-/**
- * The previous identifier name (default: 'previous').
-sb */
-@property (copy, nonatomic) NSString* previousIdentifier;
-
-/**
- * The AGAuthenticationModule object to the configuration.
+ * The Authentication Module configured for this Pipe.
  */
 @property (strong, nonatomic) id<AGAuthenticationModule> authModule;
 
@@ -90,5 +49,12 @@ sb */
  * The timeout interval for a request to complete.
  */
 @property (assign, nonatomic) NSTimeInterval timeout;
+
+/**
+ * A block specifying paging configuration for this Pipe.
+ * See AGPageConfig and for the available paging configuration parameters 
+ * and category AGNSMutableArray(Paging) for example usage.
+ */
+@property (copy, nonatomic) void (^pageConfig)(id<AGPageConfig>);
 
 @end

@@ -14,18 +14,18 @@
 @end
 
 @implementation AGViewController {
-    id<AGAuthenticationModule> _authModule;                             // [2]
+
     NSArray *_tasks;                                                    // [3]
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    id<AGAuthenticationModule> authModule;                                 
     // NSURL object:
     NSURL* projectsURL = [NSURL URLWithString:@"http://todo-aerogear.rhcloud.com/todo-server/"];
     
     AGAuthenticator* authenticator = [AGAuthenticator authenticator];
-    _authModule = [authenticator auth:^(id<AGAuthConfig> config) {
+    authModule = [authenticator auth:^(id<AGAuthConfig> config) {
         [config setName:@"myModule"];
         [config setBaseURL:projectsURL];
     }];
@@ -37,10 +37,10 @@
     
     tasksPipe = [todo pipe:^(id<AGPipeConfig> config) {                 // [5]
         [config setName:@"tasks"];
-        [config setAuthModule:_authModule];
+        [config setAuthModule:authModule];
     }];
     
-    [_authModule login:@"john" password:@"123" success:^(id object) {   // [6]
+    [authModule login:@"john" password:@"123" success:^(id object) {   // [6]
         
         [tasksPipe read:^(id responseObject) {                          // [7]
             

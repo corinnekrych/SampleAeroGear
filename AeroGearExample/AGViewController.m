@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     // NSURL object:
-    NSURL* projectsURL = [NSURL URLWithString:@"http://todo-aerogear.rhcloud.com/todo-server"];
+    NSURL* projectsURL = [NSURL URLWithString:@"http://todo-aerogear.rhcloud.com/todo-server/"];
     
     AGAuthenticator* authenticator = [AGAuthenticator authenticator];
     _authModule = [authenticator auth:^(id<AGAuthConfig> config) {
@@ -39,6 +39,7 @@
     
     tasksPipe = [todo pipe:^(id<AGPipeConfig> config) {  
         [config setName:@"tasks"];
+        [config setAuthModule:_authModule];
     }];
     
     [_authModule login:@"john" password:@"123" success:^(id object) {

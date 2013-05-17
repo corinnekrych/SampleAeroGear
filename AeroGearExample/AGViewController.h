@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-//@interface AGViewController : UIViewController
-@interface AGViewController : UITableViewController
+@interface AGViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

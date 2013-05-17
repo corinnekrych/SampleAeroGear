@@ -7,161 +7,158 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		485F3C6F17410985004AC37D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C6E17410985004AC37D /* UIKit.framework */; };
-		485F3C7117410985004AC37D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C7017410985004AC37D /* Foundation.framework */; };
-		485F3C7317410985004AC37D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C7217410985004AC37D /* CoreGraphics.framework */; };
-		485F3C7917410985004AC37D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C7717410985004AC37D /* InfoPlist.strings */; };
-		485F3C7B17410985004AC37D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F3C7A17410985004AC37D /* main.m */; };
-		485F3C7F17410985004AC37D /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F3C7E17410985004AC37D /* AGAppDelegate.m */; };
-		485F3C8117410985004AC37D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C8017410985004AC37D /* Default.png */; };
-		485F3C8317410985004AC37D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C8217410985004AC37D /* Default@2x.png */; };
-		485F3C8517410985004AC37D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C8417410985004AC37D /* Default-568h@2x.png */; };
-		485F3C8817410985004AC37D /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F3C8717410985004AC37D /* AGViewController.m */; };
-		485F3C8B17410985004AC37D /* AGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C8917410985004AC37D /* AGViewController.xib */; };
-		485F3C9317410985004AC37D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C9217410985004AC37D /* SenTestingKit.framework */; };
-		485F3C9417410985004AC37D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C6E17410985004AC37D /* UIKit.framework */; };
-		485F3C9517410985004AC37D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F3C7017410985004AC37D /* Foundation.framework */; };
-		485F3C9D17410985004AC37D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 485F3C9B17410985004AC37D /* InfoPlist.strings */; };
-		485F3CA017410985004AC37D /* AeroGearExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F3C9F17410985004AC37D /* AeroGearExampleTests.m */; };
-		7862094080E642A2B0C55C8B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2E8FBF7D424C9AAAC6758C /* libPods.a */; };
+		4822BC5017465351001C7FDA /* AGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4822BC4F17465351001C7FDA /* AGViewController.m */; };
+		48CE551A17463456006B5E41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE551917463456006B5E41 /* UIKit.framework */; };
+		48CE551C17463456006B5E41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE551B17463456006B5E41 /* Foundation.framework */; };
+		48CE551E17463456006B5E41 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE551D17463456006B5E41 /* CoreGraphics.framework */; };
+		48CE552417463456006B5E41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CE552217463456006B5E41 /* InfoPlist.strings */; };
+		48CE552617463456006B5E41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE552517463456006B5E41 /* main.m */; };
+		48CE552A17463456006B5E41 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE552917463456006B5E41 /* AGAppDelegate.m */; };
+		48CE552C17463456006B5E41 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 48CE552B17463456006B5E41 /* Default.png */; };
+		48CE552E17463456006B5E41 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48CE552D17463456006B5E41 /* Default@2x.png */; };
+		48CE553017463456006B5E41 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48CE552F17463456006B5E41 /* Default-568h@2x.png */; };
+		48CE553817463456006B5E41 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE553717463456006B5E41 /* SenTestingKit.framework */; };
+		48CE553917463456006B5E41 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE551917463456006B5E41 /* UIKit.framework */; };
+		48CE553A17463456006B5E41 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48CE551B17463456006B5E41 /* Foundation.framework */; };
+		48CE554217463456006B5E41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48CE554017463456006B5E41 /* InfoPlist.strings */; };
+		48CE554517463456006B5E41 /* AeroGearExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE554417463456006B5E41 /* AeroGearExampleTests.m */; };
+		F2BADDC924DC49CAABAB0714 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 578E39DD42E44B6F9BB51E95 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		485F3C9617410985004AC37D /* PBXContainerItemProxy */ = {
+		48CE553B17463456006B5E41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 485F3C6317410985004AC37D /* Project object */;
+			containerPortal = 48CE550E17463456006B5E41 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 485F3C6A17410985004AC37D;
+			remoteGlobalIDString = 48CE551517463456006B5E41;
 			remoteInfo = AeroGearExample;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25757E3188054A6C9897BAFE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		2B2E8FBF7D424C9AAAC6758C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		485F3C6B17410985004AC37D /* AeroGearExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroGearExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		485F3C6E17410985004AC37D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		485F3C7017410985004AC37D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		485F3C7217410985004AC37D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		485F3C7617410985004AC37D /* AeroGearExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AeroGearExample-Info.plist"; sourceTree = "<group>"; };
-		485F3C7817410985004AC37D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		485F3C7A17410985004AC37D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		485F3C7C17410985004AC37D /* AeroGearExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AeroGearExample-Prefix.pch"; sourceTree = "<group>"; };
-		485F3C7D17410985004AC37D /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
-		485F3C7E17410985004AC37D /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
-		485F3C8017410985004AC37D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		485F3C8217410985004AC37D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		485F3C8417410985004AC37D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		485F3C8617410985004AC37D /* AGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGViewController.h; sourceTree = "<group>"; };
-		485F3C8717410985004AC37D /* AGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGViewController.m; sourceTree = "<group>"; };
-		485F3C8A17410985004AC37D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AGViewController.xib; sourceTree = "<group>"; };
-		485F3C9117410985004AC37D /* AeroGearExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroGearExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		485F3C9217410985004AC37D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		485F3C9A17410985004AC37D /* AeroGearExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AeroGearExampleTests-Info.plist"; sourceTree = "<group>"; };
-		485F3C9C17410985004AC37D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		485F3C9E17410985004AC37D /* AeroGearExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AeroGearExampleTests.h; sourceTree = "<group>"; };
-		485F3C9F17410985004AC37D /* AeroGearExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AeroGearExampleTests.m; sourceTree = "<group>"; };
+		4822BC4E17465351001C7FDA /* AGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGViewController.h; sourceTree = "<group>"; };
+		4822BC4F17465351001C7FDA /* AGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGViewController.m; sourceTree = "<group>"; };
+		48CE551617463456006B5E41 /* AeroGearExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AeroGearExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48CE551917463456006B5E41 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		48CE551B17463456006B5E41 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		48CE551D17463456006B5E41 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		48CE552117463456006B5E41 /* AeroGearExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AeroGearExample-Info.plist"; sourceTree = "<group>"; };
+		48CE552317463456006B5E41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48CE552517463456006B5E41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48CE552717463456006B5E41 /* AeroGearExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AeroGearExample-Prefix.pch"; sourceTree = "<group>"; };
+		48CE552817463456006B5E41 /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
+		48CE552917463456006B5E41 /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
+		48CE552B17463456006B5E41 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		48CE552D17463456006B5E41 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		48CE552F17463456006B5E41 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		48CE553617463456006B5E41 /* AeroGearExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AeroGearExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48CE553717463456006B5E41 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		48CE553F17463456006B5E41 /* AeroGearExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AeroGearExampleTests-Info.plist"; sourceTree = "<group>"; };
+		48CE554117463456006B5E41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48CE554317463456006B5E41 /* AeroGearExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AeroGearExampleTests.h; sourceTree = "<group>"; };
+		48CE554417463456006B5E41 /* AeroGearExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AeroGearExampleTests.m; sourceTree = "<group>"; };
+		578E39DD42E44B6F9BB51E95 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		665A50D7E94F406EB9E88449 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		485F3C6817410985004AC37D /* Frameworks */ = {
+		48CE551317463456006B5E41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3C6F17410985004AC37D /* UIKit.framework in Frameworks */,
-				485F3C7117410985004AC37D /* Foundation.framework in Frameworks */,
-				485F3C7317410985004AC37D /* CoreGraphics.framework in Frameworks */,
-				7862094080E642A2B0C55C8B /* libPods.a in Frameworks */,
+				48CE551A17463456006B5E41 /* UIKit.framework in Frameworks */,
+				48CE551C17463456006B5E41 /* Foundation.framework in Frameworks */,
+				48CE551E17463456006B5E41 /* CoreGraphics.framework in Frameworks */,
+				F2BADDC924DC49CAABAB0714 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		485F3C8D17410985004AC37D /* Frameworks */ = {
+		48CE553217463456006B5E41 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3C9317410985004AC37D /* SenTestingKit.framework in Frameworks */,
-				485F3C9417410985004AC37D /* UIKit.framework in Frameworks */,
-				485F3C9517410985004AC37D /* Foundation.framework in Frameworks */,
+				48CE553817463456006B5E41 /* SenTestingKit.framework in Frameworks */,
+				48CE553917463456006B5E41 /* UIKit.framework in Frameworks */,
+				48CE553A17463456006B5E41 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		485F3C6217410985004AC37D = {
+		48CE550D17463456006B5E41 = {
 			isa = PBXGroup;
 			children = (
-				485F3C7417410985004AC37D /* AeroGearExample */,
-				485F3C9817410985004AC37D /* AeroGearExampleTests */,
-				485F3C6D17410985004AC37D /* Frameworks */,
-				485F3C6C17410985004AC37D /* Products */,
-				25757E3188054A6C9897BAFE /* Pods.xcconfig */,
+				48CE551F17463456006B5E41 /* AeroGearExample */,
+				48CE553D17463456006B5E41 /* AeroGearExampleTests */,
+				48CE551817463456006B5E41 /* Frameworks */,
+				48CE551717463456006B5E41 /* Products */,
+				665A50D7E94F406EB9E88449 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
-		485F3C6C17410985004AC37D /* Products */ = {
+		48CE551717463456006B5E41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C6B17410985004AC37D /* AeroGearExample.app */,
-				485F3C9117410985004AC37D /* AeroGearExampleTests.octest */,
+				48CE551617463456006B5E41 /* AeroGearExample.app */,
+				48CE553617463456006B5E41 /* AeroGearExampleTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		485F3C6D17410985004AC37D /* Frameworks */ = {
+		48CE551817463456006B5E41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C6E17410985004AC37D /* UIKit.framework */,
-				485F3C7017410985004AC37D /* Foundation.framework */,
-				485F3C7217410985004AC37D /* CoreGraphics.framework */,
-				485F3C9217410985004AC37D /* SenTestingKit.framework */,
-				2B2E8FBF7D424C9AAAC6758C /* libPods.a */,
+				48CE551917463456006B5E41 /* UIKit.framework */,
+				48CE551B17463456006B5E41 /* Foundation.framework */,
+				48CE551D17463456006B5E41 /* CoreGraphics.framework */,
+				48CE553717463456006B5E41 /* SenTestingKit.framework */,
+				578E39DD42E44B6F9BB51E95 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		485F3C7417410985004AC37D /* AeroGearExample */ = {
+		48CE551F17463456006B5E41 /* AeroGearExample */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C7D17410985004AC37D /* AGAppDelegate.h */,
-				485F3C7E17410985004AC37D /* AGAppDelegate.m */,
-				485F3C8617410985004AC37D /* AGViewController.h */,
-				485F3C8717410985004AC37D /* AGViewController.m */,
-				485F3C8917410985004AC37D /* AGViewController.xib */,
-				485F3C7517410985004AC37D /* Supporting Files */,
+				4822BC4E17465351001C7FDA /* AGViewController.h */,
+				4822BC4F17465351001C7FDA /* AGViewController.m */,
+				48CE552817463456006B5E41 /* AGAppDelegate.h */,
+				48CE552917463456006B5E41 /* AGAppDelegate.m */,
+				48CE552017463456006B5E41 /* Supporting Files */,
 			);
 			path = AeroGearExample;
 			sourceTree = "<group>";
 		};
-		485F3C7517410985004AC37D /* Supporting Files */ = {
+		48CE552017463456006B5E41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C7617410985004AC37D /* AeroGearExample-Info.plist */,
-				485F3C7717410985004AC37D /* InfoPlist.strings */,
-				485F3C7A17410985004AC37D /* main.m */,
-				485F3C7C17410985004AC37D /* AeroGearExample-Prefix.pch */,
-				485F3C8017410985004AC37D /* Default.png */,
-				485F3C8217410985004AC37D /* Default@2x.png */,
-				485F3C8417410985004AC37D /* Default-568h@2x.png */,
+				48CE552117463456006B5E41 /* AeroGearExample-Info.plist */,
+				48CE552217463456006B5E41 /* InfoPlist.strings */,
+				48CE552517463456006B5E41 /* main.m */,
+				48CE552717463456006B5E41 /* AeroGearExample-Prefix.pch */,
+				48CE552B17463456006B5E41 /* Default.png */,
+				48CE552D17463456006B5E41 /* Default@2x.png */,
+				48CE552F17463456006B5E41 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		485F3C9817410985004AC37D /* AeroGearExampleTests */ = {
+		48CE553D17463456006B5E41 /* AeroGearExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C9E17410985004AC37D /* AeroGearExampleTests.h */,
-				485F3C9F17410985004AC37D /* AeroGearExampleTests.m */,
-				485F3C9917410985004AC37D /* Supporting Files */,
+				48CE554317463456006B5E41 /* AeroGearExampleTests.h */,
+				48CE554417463456006B5E41 /* AeroGearExampleTests.m */,
+				48CE553E17463456006B5E41 /* Supporting Files */,
 			);
 			path = AeroGearExampleTests;
 			sourceTree = "<group>";
 		};
-		485F3C9917410985004AC37D /* Supporting Files */ = {
+		48CE553E17463456006B5E41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				485F3C9A17410985004AC37D /* AeroGearExampleTests-Info.plist */,
-				485F3C9B17410985004AC37D /* InfoPlist.strings */,
+				48CE553F17463456006B5E41 /* AeroGearExampleTests-Info.plist */,
+				48CE554017463456006B5E41 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -169,15 +166,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		485F3C6A17410985004AC37D /* AeroGearExample */ = {
+		48CE551517463456006B5E41 /* AeroGearExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 485F3CA317410985004AC37D /* Build configuration list for PBXNativeTarget "AeroGearExample" */;
+			buildConfigurationList = 48CE554817463456006B5E41 /* Build configuration list for PBXNativeTarget "AeroGearExample" */;
 			buildPhases = (
-				803692EA55224B69B331F9D7 /* Check Pods Manifest.lock */,
-				485F3C6717410985004AC37D /* Sources */,
-				485F3C6817410985004AC37D /* Frameworks */,
-				485F3C6917410985004AC37D /* Resources */,
-				9F09080D331B460D869FDF0E /* Copy Pods Resources */,
+				AD5C636C29AB4052953E6EC2 /* Check Pods Manifest.lock */,
+				48CE551217463456006B5E41 /* Sources */,
+				48CE551317463456006B5E41 /* Frameworks */,
+				48CE551417463456006B5E41 /* Resources */,
+				965D9B1792AE48C1B2777C9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,81 +182,80 @@
 			);
 			name = AeroGearExample;
 			productName = AeroGearExample;
-			productReference = 485F3C6B17410985004AC37D /* AeroGearExample.app */;
+			productReference = 48CE551617463456006B5E41 /* AeroGearExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		485F3C9017410985004AC37D /* AeroGearExampleTests */ = {
+		48CE553517463456006B5E41 /* AeroGearExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 485F3CA617410985004AC37D /* Build configuration list for PBXNativeTarget "AeroGearExampleTests" */;
+			buildConfigurationList = 48CE554B17463456006B5E41 /* Build configuration list for PBXNativeTarget "AeroGearExampleTests" */;
 			buildPhases = (
-				485F3C8C17410985004AC37D /* Sources */,
-				485F3C8D17410985004AC37D /* Frameworks */,
-				485F3C8E17410985004AC37D /* Resources */,
-				485F3C8F17410985004AC37D /* ShellScript */,
+				48CE553117463456006B5E41 /* Sources */,
+				48CE553217463456006B5E41 /* Frameworks */,
+				48CE553317463456006B5E41 /* Resources */,
+				48CE553417463456006B5E41 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				485F3C9717410985004AC37D /* PBXTargetDependency */,
+				48CE553C17463456006B5E41 /* PBXTargetDependency */,
 			);
 			name = AeroGearExampleTests;
 			productName = AeroGearExampleTests;
-			productReference = 485F3C9117410985004AC37D /* AeroGearExampleTests.octest */;
+			productReference = 48CE553617463456006B5E41 /* AeroGearExampleTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		485F3C6317410985004AC37D /* Project object */ = {
+		48CE550E17463456006B5E41 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AG;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "red hat";
+				ORGANIZATIONNAME = "My Company";
 			};
-			buildConfigurationList = 485F3C6617410985004AC37D /* Build configuration list for PBXProject "AeroGearExample" */;
+			buildConfigurationList = 48CE551117463456006B5E41 /* Build configuration list for PBXProject "AeroGearExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 485F3C6217410985004AC37D;
-			productRefGroup = 485F3C6C17410985004AC37D /* Products */;
+			mainGroup = 48CE550D17463456006B5E41;
+			productRefGroup = 48CE551717463456006B5E41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				485F3C6A17410985004AC37D /* AeroGearExample */,
-				485F3C9017410985004AC37D /* AeroGearExampleTests */,
+				48CE551517463456006B5E41 /* AeroGearExample */,
+				48CE553517463456006B5E41 /* AeroGearExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		485F3C6917410985004AC37D /* Resources */ = {
+		48CE551417463456006B5E41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3C7917410985004AC37D /* InfoPlist.strings in Resources */,
-				485F3C8117410985004AC37D /* Default.png in Resources */,
-				485F3C8317410985004AC37D /* Default@2x.png in Resources */,
-				485F3C8517410985004AC37D /* Default-568h@2x.png in Resources */,
-				485F3C8B17410985004AC37D /* AGViewController.xib in Resources */,
+				48CE552417463456006B5E41 /* InfoPlist.strings in Resources */,
+				48CE552C17463456006B5E41 /* Default.png in Resources */,
+				48CE552E17463456006B5E41 /* Default@2x.png in Resources */,
+				48CE553017463456006B5E41 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		485F3C8E17410985004AC37D /* Resources */ = {
+		48CE553317463456006B5E41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3C9D17410985004AC37D /* InfoPlist.strings in Resources */,
+				48CE554217463456006B5E41 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		485F3C8F17410985004AC37D /* ShellScript */ = {
+		48CE553417463456006B5E41 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,21 +268,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		803692EA55224B69B331F9D7 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-		};
-		9F09080D331B460D869FDF0E /* Copy Pods Resources */ = {
+		965D9B1792AE48C1B2777C9C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -300,58 +282,64 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		AD5C636C29AB4052953E6EC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		485F3C6717410985004AC37D /* Sources */ = {
+		48CE551217463456006B5E41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3C7B17410985004AC37D /* main.m in Sources */,
-				485F3C7F17410985004AC37D /* AGAppDelegate.m in Sources */,
-				485F3C8817410985004AC37D /* AGViewController.m in Sources */,
+				48CE552617463456006B5E41 /* main.m in Sources */,
+				48CE552A17463456006B5E41 /* AGAppDelegate.m in Sources */,
+				4822BC5017465351001C7FDA /* AGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		485F3C8C17410985004AC37D /* Sources */ = {
+		48CE553117463456006B5E41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				485F3CA017410985004AC37D /* AeroGearExampleTests.m in Sources */,
+				48CE554517463456006B5E41 /* AeroGearExampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		485F3C9717410985004AC37D /* PBXTargetDependency */ = {
+		48CE553C17463456006B5E41 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 485F3C6A17410985004AC37D /* AeroGearExample */;
-			targetProxy = 485F3C9617410985004AC37D /* PBXContainerItemProxy */;
+			target = 48CE551517463456006B5E41 /* AeroGearExample */;
+			targetProxy = 48CE553B17463456006B5E41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		485F3C7717410985004AC37D /* InfoPlist.strings */ = {
+		48CE552217463456006B5E41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				485F3C7817410985004AC37D /* en */,
+				48CE552317463456006B5E41 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		485F3C8917410985004AC37D /* AGViewController.xib */ = {
+		48CE554017463456006B5E41 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				485F3C8A17410985004AC37D /* en */,
-			);
-			name = AGViewController.xib;
-			sourceTree = "<group>";
-		};
-		485F3C9B17410985004AC37D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				485F3C9C17410985004AC37D /* en */,
+				48CE554117463456006B5E41 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -359,7 +347,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		485F3CA117410985004AC37D /* Debug */ = {
+		48CE554617463456006B5E41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		485F3CA217410985004AC37D /* Release */ = {
+		48CE554717463456006B5E41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -415,9 +403,9 @@
 			};
 			name = Release;
 		};
-		485F3CA417410985004AC37D /* Debug */ = {
+		48CE554917463456006B5E41 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25757E3188054A6C9897BAFE /* Pods.xcconfig */;
+			baseConfigurationReference = 665A50D7E94F406EB9E88449 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AeroGearExample/AeroGearExample-Prefix.pch";
@@ -427,9 +415,9 @@
 			};
 			name = Debug;
 		};
-		485F3CA517410985004AC37D /* Release */ = {
+		48CE554A17463456006B5E41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25757E3188054A6C9897BAFE /* Pods.xcconfig */;
+			baseConfigurationReference = 665A50D7E94F406EB9E88449 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AeroGearExample/AeroGearExample-Prefix.pch";
@@ -439,7 +427,7 @@
 			};
 			name = Release;
 		};
-		485F3CA717410985004AC37D /* Debug */ = {
+		48CE554C17463456006B5E41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AeroGearExample.app/AeroGearExample";
@@ -456,7 +444,7 @@
 			};
 			name = Debug;
 		};
-		485F3CA817410985004AC37D /* Release */ = {
+		48CE554D17463456006B5E41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AeroGearExample.app/AeroGearExample";
@@ -476,34 +464,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		485F3C6617410985004AC37D /* Build configuration list for PBXProject "AeroGearExample" */ = {
+		48CE551117463456006B5E41 /* Build configuration list for PBXProject "AeroGearExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				485F3CA117410985004AC37D /* Debug */,
-				485F3CA217410985004AC37D /* Release */,
+				48CE554617463456006B5E41 /* Debug */,
+				48CE554717463456006B5E41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		485F3CA317410985004AC37D /* Build configuration list for PBXNativeTarget "AeroGearExample" */ = {
+		48CE554817463456006B5E41 /* Build configuration list for PBXNativeTarget "AeroGearExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				485F3CA417410985004AC37D /* Debug */,
-				485F3CA517410985004AC37D /* Release */,
+				48CE554917463456006B5E41 /* Debug */,
+				48CE554A17463456006B5E41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		485F3CA617410985004AC37D /* Build configuration list for PBXNativeTarget "AeroGearExampleTests" */ = {
+		48CE554B17463456006B5E41 /* Build configuration list for PBXNativeTarget "AeroGearExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				485F3CA717410985004AC37D /* Debug */,
-				485F3CA817410985004AC37D /* Release */,
+				48CE554C17463456006B5E41 /* Debug */,
+				48CE554D17463456006B5E41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 485F3C6317410985004AC37D /* Project object */;
+	rootObject = 48CE550E17463456006B5E41 /* Project object */;
 }

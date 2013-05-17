@@ -2,13 +2,11 @@
 //  AGAppDelegate.m
 //  AeroGearExample
 //
-//  Created by Corinne Krych on 5/13/13.
-//  Copyright (c) 2013 red hat. All rights reserved.
+//  Created by Corinne Krych on 5/17/13.
+//  Copyright (c) 2013 My Company. All rights reserved.
 //
 
 #import "AGAppDelegate.h"
-
-#import "AGViewController.h"
 
 @implementation AGAppDelegate
 
@@ -16,8 +14,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[AGViewController alloc] init];//initWithStyle:UITableViewStylePlain];
-    self.window.rootViewController = self.viewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.controller = [[AGViewController alloc] initWithStyle:UITableViewStylePlain]; // [1]
+    self.window.rootViewController = self.controller;                                 // [2]
     [self.window makeKeyAndVisible];
     return YES;
 }
